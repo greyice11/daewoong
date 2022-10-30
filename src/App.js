@@ -1,4 +1,5 @@
-import React from "react";
+//src/App.js
+import React from 'react';
  
 class App extends React.Component {
     constructor(props) {
@@ -6,11 +7,11 @@ class App extends React.Component {
         this.state = {employee: []};
         this.headers = [
             { key: 'id', label: 'Id'},
-            { key: 'name', label: 'Keywords' },
-            { key: 'position', label: 'Mail Title' },
-            { key: 'office', label: 'To' },
-            { key: 'age', label: 'Reference' },
-            { key: 'salary', label: 'Date' }
+            { key: 'name', label: 'Name' },
+            { key: 'position', label: 'Position' },
+            { key: 'office', label: 'Office' },
+            { key: 'age', label: 'Age' },
+            { key: 'salary', label: 'Salary' }
         ];
         this.state = { checkedBoxes: [] };
         this.deleteEmployee = this.deleteEmployees.bind(this);
@@ -19,7 +20,7 @@ class App extends React.Component {
      
     deleteEmployees = (event) => {
         event.preventDefault();
-        if(window.confirm('Are you sure, want to delete the selected article?')) {
+        if(window.confirm('Are you sure, want to delete the selected employee?')) {
             alert(this.state.checkedBoxes + " Succesfully Deleted");
         }
     }
@@ -60,9 +61,9 @@ class App extends React.Component {
         const employeeFound = this.state.employee_rs && this.state.employee_rs.length;
         if(employeeFound) {
             return (
-                <div className="container"><h1><strong>Daewoong Article Crawler Data from MySQL</strong></h1>
+                <div className="container"><h1>ReactJS Fetch Data from Database with PHP Mysql</h1>
                     <div id="msg"></div>
-                    
+                    <button type="button" className="btn btn-danger" onClick={this.deleteEmployees}>Delete Selected Employee(s)</button>
                     <table className="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -93,7 +94,6 @@ class App extends React.Component {
                             }
                         </tbody>
                     </table>
-                    <button type="button" className="btn btn-danger" onClick={this.deleteEmployees}>Delete Selected Articles(s)</button>
                 </div>
             )
         } else {

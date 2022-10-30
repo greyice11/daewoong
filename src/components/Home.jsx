@@ -1,30 +1,26 @@
-import React from "react";
-
-function Home() {
-  return (
-    <div className="home">
-      <div class="container">
-        <div class="row align-items-center my-5">
-          <div class="col-lg-7">
-            <img
-              class="img-fluid rounded mb-4 mb-lg-0"
-              src="http://placehold.it/900x400"
-              alt=""
-            />
-          </div>
-          <div class="col-lg-5">
-            <h1 class="font-weight-light">Home page</h1>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
+import React, { Component } from 'react';
+import ExampleChart from './charts.jsx';
+import ExampleChart2 from './charts copy.jsx';
+import ExampleChart3 from './charts copy 2.jsx';
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <div>
+        <ExampleChart3/>
+        <ExampleChart2/>
         </div>
+        <p>
+          The dashboard will be changed later depending upon the type of data and type of charts we are dealing with.
+          It depends on the article crawler page
+        </p>
+        <p>
+          Need some suggestions
+        </p>
+        <ExampleChart/>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default Home;
+export default App;
